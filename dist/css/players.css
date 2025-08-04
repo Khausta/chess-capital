@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "GolosText-Medium";
+  src: url("./../../fonts/Golos-Text/GolosText-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GolosText-Regular";
+  src: url("./../../fonts/Golos-Text/GolosText-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GolosText-Bold";
+  src: url("./../../fonts/Golos-Text/GolosText-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GolosText-SemiBold";
+  src: url("./../../fonts/Golos-Text/GolosText-SemiBold.ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Merriweather-Regular";
+  src: url("./../../fonts/Merriweather/Merriweather-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Merriweather-Bold";
+  src: url("./../../fonts/Merriweather/Merriweather-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+.players__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.players__counter {
+  font-family: "GolosText-Regular";
+  font-size: 16px;
+  color: #313131;
+}
+.players__counter .counter-total-count {
+  color: opacity(68%);
+}
+.players__slider {
+  margin: auto;
+  width: 1222px;
+}
+.players__wrapper {
+  display: flex;
+}
+.players__item {
+  max-width: 407px;
+  width: 407px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.players__photo-frame {
+  margin-bottom: 28px;
+  border-radius: 50%;
+  background-image: url("../img/photo-frame-bg.jpg");
+  background-size: cover;
+  background-position: 0 0;
+  width: 320px;
+  height: 320px;
+}
+.players__name {
+  margin-bottom: 6px;
+  font-family: "GolosText-SemiBold";
+  font-size: 24px;
+  color: #313131;
+}
+.players__rank {
+  margin-bottom: 20px;
+  font-family: "GolosText-Regular";
+  font-size: 20px;
+}
+.players__btn-details {
+  padding: 12px;
+  color: #3057A2;
+  font-family: "GolosText-Medium";
+  font-size: 16px;
+  border-radius: 62px;
+  background-color: transparent;
+  border: 1px solid #3057A2;
+  transition: all 0.2s ease;
+}
+.players__btn-details:hover {
+  color: #ffffff;
+  background-color: #3057A2;
+}

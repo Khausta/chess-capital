@@ -1,0 +1,157 @@
+@use '../../libs/variables.scss';
+@use '../../libs/fonts.scss';
+
+
+.stages {
+    &__header {
+        background-color: grey;
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+        grid-template-areas: 
+        "onetwo onetwo three"
+        "fourfive fourfive three"
+        "six seven seven";
+    }
+
+    &__num {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 36px;
+        background-color: variables.$white-color;
+        border-radius: 50%;
+        font-family: "GolosText-SemiBold";
+        font-size: 20px;
+        color: variables.$black-color;
+        flex-shrink: 0;
+
+    }
+
+    &__text {
+        font-family: "GolosText-Medium";
+        font-size: 20px;
+        color: variables.$black-color;
+    }
+
+   &__item_1-2 {
+    grid-area: onetwo;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+   }
+
+   &__item_1 {
+    background-image: url("../img/stage/stage-bg-1-desk.jpg");
+   }
+
+   &__item_2 {
+    background-image: url("../img/stage/stage-bg-2-desk.jpg");
+   }
+
+   &__item_3 {
+    grid-area: three;
+    background-image: url("../img/stage/stage-bg-3-desk.jpg");
+   }
+
+   &__item_4-5 {
+    grid-area: fourfive;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+   }
+
+   &__item_4 {
+    grid-area: three;
+    background-image: url("../img/stage/stage-bg-4-desk.jpg");
+        p {
+            width: 90%;
+        }
+    }
+
+   &__item_5 {
+    grid-area: three;
+    background-image: url("../img/stage/stage-bg-5-desk.jpg");
+        p {
+            width: 84%;
+        }   
+    }
+
+   &__item_6 {
+    grid-area: six;
+    background-image: url("../img/stage/stage-bg-6-desk.jpg");
+   }
+
+   &__item_7 {
+    grid-area: seven;
+    background-image: url("../img/stage/stage-bg-7-desk.jpg");
+    p {
+        width: 57%;
+    }
+   }
+
+   &__part {
+    width: 50%;
+   }
+
+   &__content {
+    padding: 20px;
+    display: flex;
+    gap: 16px;
+    justify-content: start;
+    align-items: start;
+   }
+   
+}
+
+
+
+@media (max-width: 1366px) {
+    .stages {
+        &__num, &__text {
+          font-size: variables.$size20;  
+        }
+
+        &__content {
+            padding: variables.$size20;
+            gap: variables.$size16;
+        }
+            
+        &__wrapper {
+            gap: variables.$size16;
+        }
+        
+    }
+}
+
+
+@media (max-width: 768px) {
+    .stages {
+        &__wrapper {
+            display: flex;
+        }
+
+        &__part {
+            width: 100%;
+        }
+
+        &__item {
+            padding-bottom: variables.$size34;
+        }
+
+        &__item_1-2, &__item_4-5 {
+            flex-direction: column;
+            gap: 0;
+            width: 100%;
+            justify-content: start;
+            align-items: start;
+            p {
+                width: 100%;
+            }
+        }
+    }
+}

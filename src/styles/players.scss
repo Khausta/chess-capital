@@ -1,0 +1,82 @@
+@use './libs/variables.scss';
+@use './libs/fonts.scss';
+
+.players {
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__counter {
+        font-family: "GolosText-Regular";
+        font-size: 16px;
+        color: variables.$black-color;
+        
+        .counter-total-count {
+            color: opacity(68%);
+        }
+    }
+    &__slider {
+        margin: auto;
+        width: 1222px;
+    }
+
+    &__wrapper {
+        display: flex;
+    }
+
+
+
+    &__item {
+        max-width: 407px;
+        width: 407px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+
+    &__photo-frame {
+        margin-bottom: 28px;
+        border-radius: 50%;
+        background-image: url('../img/photo-frame-bg.jpg');
+        background-size: cover;
+        background-position: 0 0;
+        width: 320px;
+        height: 320px;
+    }
+
+    &__name {
+        margin-bottom: 6px;
+        font-family: "GolosText-SemiBold";
+        font-size: 24px;
+        color: variables.$black-color;
+    }
+
+    &__rank {
+        margin-bottom: 20px;
+        font-family: "GolosText-Regular";
+        font-size: 20px;
+    }
+
+    &__btn-details {
+        padding: 12px;
+        color: #3057A2;
+        font-family: "GolosText-Medium";
+        font-size: 16px;
+        border-radius: 62px;
+        background-color: transparent;
+        border: 1px solid #3057A2;
+        transition: all .2s ease;
+
+        &:hover {
+            color: variables.$white-color;
+            background-color: #3057A2;;
+        }
+
+    }
+}

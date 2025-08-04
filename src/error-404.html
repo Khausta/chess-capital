@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIT</title>
+    
+</head>
+<body>
+
+    <!-- main content -->
+    <main>
+        
+        <section class="section error">
+            <div class="container">
+                <div class="title-block error__title-block">
+                    <div class="key-word">
+                        ошибка 404
+                    </div>
+                    <h1>
+                        Ой, страница не найдена.
+                        Возможно, она была удалена,
+                        или набран неверный адрес
+                    </h1>
+                    <a class="button button_big light-blue-bg error__button" href="index.html">на главную страницу</a>
+                </div>  
+            </div>
+            <picture>
+                <source media="(max-width: 768px)" srcset="img/error-wave/animated-wave-mob.svg">
+                <img class="error__img" src="img/error-wave/animated-wave.svg" alt="">
+            </picture>
+        </section>
+    </main>
+    <!-- popup  -->
+    <div class="overlay">
+        <div class="popup popup_feedback ">
+            <div class="popup__header">
+                <h2 class="second-title">
+                    Будем рады 
+                    сотрудничеству
+                </h2>
+                <button type="button" class="close-button _js_closePopupForm">
+                    <img src="img/cross-icon.svg" alt="Закрыть">
+                </button>
+            </div>
+            <form class="popup__form" action="#">
+                <input class="popup__input text" type="text" placeholder="Имя">
+                <input class="popup__input text" type="tel" placeholder="Телефон с кодом страны">
+                <button type="button" class="button text popup__button dark-bg">Оставить заявку</button>
+                <p class="popup__note">специалист свяжется с Вами в течение этого дня</p>
+            </form>
+        </div>
+        <div class="popup popup_success">
+            <h2 class="second-title">
+                Заявка отправлена!
+            </h2>
+            <p class="text">
+                Специалист свяжется с Вами 
+                в течение этого дня. Благодарим 
+                за обращение!
+            </p>
+            <div>
+                <img src="img/popup-done.svg" alt="">
+            </div>
+            <button href="#" class="popup__link-close small-grey-text">
+                Хорошо, закрыть окно
+            </button>
+        </div>
+
+    </div>
+</body>
+</html>

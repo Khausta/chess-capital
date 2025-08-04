@@ -1,0 +1,89 @@
+@use './libs/variables.scss';
+@use './libs/fonts.scss';
+@use './blocks/hero/hero';
+
+@use './stages';
+@use './players';
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    margin: auto;
+    max-width: 1366px;
+    overflow: hidden;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    position: relative;
+    margin: auto;
+    max-width: 1366px;
+    padding: 0 72px;
+}
+
+.title {
+    font-family: "Merriweather-Regular";
+    font-size: 54px;
+}
+
+ .control {
+    display: flex;
+    gap: variables.$size16m;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.button-arrow {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: variables.$black-color;
+    transition: all .2s ease;
+    
+    &:disabled {
+        background-color: variables.$btn-disabled-color;
+    }
+
+    &:hover {
+        background-color: variables.$yellow-color;
+    }
+}
+
+.prev, .next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        object-fit: contain;
+        object-position: 0 0;
+        height: 16px;
+    }
+}
+
+.prev {
+    img {
+        transform: rotate(180deg);
+    }
+}
+
+@media (max-width: 1366px) {
+    .container {
+        padding: 0 variables.$size72;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 variables.$size20m;
+    }
+}

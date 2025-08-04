@@ -1,0 +1,18 @@
+$white-color: #ffffff;
+$black-color: #313131;
+$gray-color: #D9D9D9;
+$btn-disabled-color: #D6D6D6;
+$yellow-color: #FBCE51;
+
+$size16: clamp(9px, 1.2vw, 16px);
+$size20: clamp(11px, 1.5vw, 20px);
+$size72: clamp(40px, 5.3vw, 72px);
+
+
+// for 375 (mobile)
+$size34m: clamp(29px, 9.1vw, 70px);
+$size20m: clamp(17px, 5.3vw, 41px);
+$size62m: clamp(52px, 16.5vw, 126px);
+$size18m: clamp(15px, 4.8vw, 36px);
+$size16m: clamp(13px, 4.3vw, 33px);
+$size28m: clamp(14px, 7.5vw, 57px);
