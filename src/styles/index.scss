@@ -31,10 +31,59 @@ button {
     cursor: pointer;
 }
 
+.infinite-line {
+    position: relative;
+}
+
+.marquee {
+    position: absolute;
+    bottom: 0;
+  overflow: hidden;
+  background-color: variables.$red-color;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.marquee__track {
+    bottom: 0;
+  display: flex;
+  width: fit-content;
+  
+  animation: scroll-left 15s linear infinite;
+}
+
+.marquee__content {
+  display: flex;
+  font-family: "Merriweather-Light";
+  font-size: 16px;
+  
+  color: variables.$white-color;
+  text-transform: uppercase;
+  
+}
+
+.marquee__content span {
+  white-space: nowrap;
+  font-size: 1.2rem;
+  margin-right: 2rem;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
 .logo {
     display: block;
     max-width: 245px;
     max-height: 36px;
+    
+    img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+    
 }
 
 .container {
@@ -145,6 +194,10 @@ button {
 
 @media (max-width: 1366px) {
 
+    .logo {
+        max-width: calc(variables.$index * 245vw);
+        max-height: calc(variables.$index * 36vw);
+    }
     .title {
         font-size: variables.$size54;
     }
@@ -156,9 +209,21 @@ button {
     .container {
         padding: 0 variables.$size72;
     }
+
+    .marquee {
+    padding: calc(variables.$index * 10vw) 0;
+    }
+    .marquee__content {
+        font-size: calc(variables.$index * 16vw);
+    }
 }
 
 @media (max-width: 768px) {
+
+    .logo {
+        max-width: calc(variables.$index-m * 210vw);
+        max-height: calc(variables.$index-m * 32vw);
+    }
     .container {
         padding: 0 variables.$size20m;
     }
@@ -192,7 +257,12 @@ button {
         font-size: calc(variables.$index-m * 28vw);
     }
 
-
+    .marquee {
+        padding: calc(variables.$index-m * 10vw) 0;
+    }
+.marquee__content {
+    font-size: calc(variables.$index-m * 16vw);
+}
 
 
 

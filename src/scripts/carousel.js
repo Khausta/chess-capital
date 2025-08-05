@@ -311,6 +311,7 @@ if (window.matchMedia("(max-width: 768px)").matches) {
         counter: '.playes__counter',
         slidesPerView: 1,  //количесвто видимых слайдов
         loop: true,
+        autoplay: 4000,
         });
 } else {
     const playersSlider = new Slider('.players__wrapper', '.players__item', {
@@ -323,5 +324,6 @@ if (window.matchMedia("(max-width: 768px)").matches) {
         counter: '.playes__counter',
         slidesPerView: 3,  //количесвто видимых слайдов
         loop: true,
+        autoplay: 4000,
         });
 }

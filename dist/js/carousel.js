@@ -310,7 +310,8 @@ if (window.matchMedia("(max-width: 768px)").matches) {
     counter: '.playes__counter',
     slidesPerView: 1,
     //количесвто видимых слайдов
-    loop: true
+    loop: true,
+    autoplay: 4000
   });
 } else {
   var _playersSlider = new Slider('.players__wrapper', '.players__item', {
@@ -325,7 +326,8 @@ if (window.matchMedia("(max-width: 768px)").matches) {
     counter: '.playes__counter',
     slidesPerView: 3,
     //количесвто видимых слайдов
-    loop: true
+    loop: true,
+    autoplay: 4000
   });
 }
 //# sourceMappingURL=carousel.js.map
