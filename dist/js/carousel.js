@@ -46,6 +46,7 @@ var Slider = /*#__PURE__*/function () {
         }
       }
     });
+    this.animateElements = options.animateElements || null;
     this.gap = options.gap || 0;
     this.sliderWrapper = document.querySelector(wrapperSelector);
     this.slideContainer = this.sliderWrapper.parentNode;
@@ -200,6 +201,7 @@ var Slider = /*#__PURE__*/function () {
       this.isAnimating = true;
       this.currentIndex += direction;
       this.sliderWrapper.style.transition = "transform 0.5s ease";
+      if (this.animateElements) this.animateElements();
       this.updateSliderPosition();
       setTimeout(function () {
         if (_this4.currentIndex >= _this4.slides.length + _this4.countSlidesPerSwipe) {
@@ -220,6 +222,7 @@ var Slider = /*#__PURE__*/function () {
       // document.querySelector(this.buttonPrev).removeAttribute('disabled'); 
       this.currentIndex += direction;
       this.sliderWrapper.style.transition = "transform 0.5s ease";
+      if (this.animateElements) this.animateElements();
       this.updateSliderPosition();
       this.updateButtons();
       if (this.pagination) this.updatePagination();
@@ -255,6 +258,7 @@ var Slider = /*#__PURE__*/function () {
         dot.addEventListener('click', function () {
           _this5.sliderWrapper.style.transition = "transform 0.5s ease";
           _this5.currentIndex = index;
+          if (_this5.animateElements) _this5.animateElements();
           _this5.updateSliderPosition();
           _this5.updatePagination();
           _this5.updateButtons();
@@ -286,15 +290,30 @@ var sliderOptions = {
   slidesPerView: 1,
   //количесвто видимых слайдов
   loop: false,
-  pagination: '.stages__pagination'
-  // autoplay: 2000,
+  pagination: '.stages__pagination',
+  animateElements: function animateElements() {
+    document.querySelector('.stages__img').classList.toggle('animate');
+  }
   // gap: 20
 };
-console.log(window.matchMedia("(max-width: 768px)").matches);
 if (window.matchMedia("(max-width: 768px)").matches) {
   var slider = new Slider('.stages__wrapper', '.stages__item-wrapper', sliderOptions);
-} else {
   var playersSlider = new Slider('.players__wrapper', '.players__item', {
+    startIndex: 0,
+    // Начальный индекс 
+    countSlides: 1,
+    // Количество сдвигов за одно движение
+    buttons: {
+      btnPrev: '.playes__btn-prev',
+      btnNext: '.playes__btn-next'
+    },
+    counter: '.playes__counter',
+    slidesPerView: 1,
+    //количесвто видимых слайдов
+    loop: true
+  });
+} else {
+  var _playersSlider = new Slider('.players__wrapper', '.players__item', {
     startIndex: 0,
     // Начальный индекс 
     countSlides: 3,

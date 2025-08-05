@@ -16,9 +16,95 @@
 
     <!-- main content -->
     <main>
+        <section class="main-info">
+            <div class="container">
+    <picture>
+        <source media="(max-width: 768px)" srcset="./img/main-info/game-photo-mob.png">
+        <img class="main-info__header-img" src="./img/main-info/game-photo.png" alt="Самолёт">
+    </picture>
+                <div class="main-info__lection">
+                    
+                    <header class="main-info__header main-info__header_lection">
+                        <h2 class="title_small mb261">
+                        Чтобы поддержать Международный васюкинский турнир
+                        </h2>
+                        <h2 class="title_small ">
+                        посетите лекцию на тему: <span>«Плодотворная дебютная идея»</span>
+                        </h2>
+                    </header>
+                    
+                    
+                </div>
+            
+                <div class="main-info__table-block">
+                     <picture>
+                        <source
+                            media="(max-width: 768px)"
+                            srcset="./img/main-info/gamer-img-mob.png">
+                        
+                        <img class="main-info__master-photo" src="./img/main-info/gamer-img.png"
+                        alt="Шахматист">
+                    </picture>
+
+                    <div>
+                        
+                    <header class="main-info__header main-info__header_table">
+                        <h2 class="title_small">
+                        и Сеанс <span>одновременной игры в шахматы на 160 досках</span> гроссмейстера О. Бендера
+                        </h2>
+                        
+                    </header>
+                    
+
+                    <table class="info-table" >
+
+                        <tr>
+                            <td class="info-table__first-row">Место проведения:</td>
+                            <td class="info-table__first-row">Клуб «Картонажник»</td>
+                        </tr>
+                        <tr>
+                            <td>Дата и время мероприятия:</td>
+                            <td>22 июня 1927 г. в 18:00</td>
+                        </tr>
+                        <tr>
+                            <td>Стоимость входных билетов:</td>
+                            <td>20 коп.</td>
+                        </tr>
+                        <tr>
+                            <td>Плата за игру:</td>
+                            <td>50 коп.</td>
+                        </tr>
+                        <tr>
+                            <td>Взнос на телеграммы:</td>
+                            <td>100 руб. 21 руб. 16 коп.</td>
+                        </tr>
+                    </table>
+
+                    <p class="sub-table">По всем вопросам обращаться в администрацию к К. Михельсону</p>
+                </div>
+
+                
+                    </div>
+                    
+
+            </div>
+        </section>
     
         <section class="stages">
             <div class="container">
+                <picture>
+                    <source
+                        media="(max-width: 768px)"
+                        srcset="./img/stage/airplane-mob.png">
+                    
+                    <img class="stages__img" src="./img/stage/airplane.png"
+                    alt="Самолёт">
+                </picture>
+                <header class="stages__header">
+                    <h2 class="title">Этапы преображения Васюков</h2>
+                    <span class="stages__subtitle">Будущие источники обогащения васюкинцев</span>
+                </header>
+
                 <div class="stages__slider">
                     <div class="stages__wrapper">
                         <div class="stages__item-wrapper">
@@ -67,7 +153,7 @@
                         
                     </div>
                 </div>
-                <div class="control">
+                <div class="control stages__control">
                     <button class="button-arrow prev stages__btn-prev">
                         <img src="./img/arrow-next-prev.svg" alt="Переключить на предыдущий слайд">
                     </button>
@@ -83,79 +169,92 @@
 
         <section class="players">
             <div class="container">
-                <header class="players__header">
-                    <h2 class="title">Участники турнира</h2>
-                    <div class="control">
+                <div class="players__grid-layout">
+                    <header class="players__header">
+                        <h2 class="title">Участники турнира</h2>
+                    </header>
+
+                    <div class="control players__control">
                         <button class="button-arrow prev playes__btn-prev">
                             <img src="./img/arrow-next-prev.svg" alt="Переключить на предыдущий слайд">
                         </button>
-                        <div class="playes__counter"></div>
+                        <div class="counter playes__counter"></div>
                         <button class="button-arrow next playes__btn-next">
                             <img src="./img/arrow-next-prev.svg" alt="Переключить на следующий слайд">
                         </button>
                     </div>
 
-                </header>
-            
-            </div>
-            <div class="players__slider">
-                <div class="players__wrapper">
-                    <div class="players__item">
-                        <div class="players__photo-frame">
-                            <!-- <img src="" alt="Портрет участника" class="players__image"> -->
+                    <div class="players__slider">
+                        <div class="players__wrapper">
+                            <div class="players__item">
+                                <div class="players__photo-frame">
+                                    <!-- <img src="" alt="Портрет участника" class="players__image"> -->
+                                </div>
+                                <p class="players__name">Хозе-Рауль Капабланка</p>
+                                <p class="players__rank">Чемпион мира по шахматам</p>
+                                <button class="players__btn-details">Подробнее</button>
+                            </div>
+                            <div class="players__item">
+                                <div class="players__photo-frame">
+                                    <!-- <img src="" alt="Портрет участника" class="players__image"> -->
+                                </div>
+                                <p class="players__name">Эммануил Ласкер</p>
+                                <p class="players__rank">Чемпион мира по шахматам</p>
+                                <button class="players__btn-details">Подробнее</button>
+                            </div>
+                            <div class="players__item">
+                                <div class="players__photo-frame">
+                                    <!-- <img src="" alt="Портрет участника" class="players__image"> -->
+                                </div>
+                                <p class="players__name">Александр Алехин</p>
+                                <p class="players__rank">Чемпион мира по шахматам</p>
+                                <button class="players__btn-details">Подробнее</button>
+                            </div>
+                            <div class="players__item">
+                                <div class="players__photo-frame">
+                                    <!-- <img src="" alt="Портрет участника" class="players__image"> -->
+                                </div>
+                                <p class="players__name">Арон Нимцович</p>
+                                <p class="players__rank">Чемпион мира по шахматам</p>
+                                <button class="players__btn-details">Подробнее</button>
+                            </div>
+                            <div class="players__item">
+                                <div class="players__photo-frame">
+                                    <!-- <img src="" alt="Портрет участника" class="players__image"> -->
+                                </div>
+                                <p class="players__name">Рихард Рети</p>
+                                <p class="players__rank">Чемпион мира по шахматам</p>
+                                <button class="players__btn-details">Подробнее</button>
+                            </div>
+                            <div class="players__item">
+                                <div class="players__photo-frame">
+                                    <!-- <img src="" alt="Портрет участника" class="players__image"> -->
+                                </div>
+                                <p class="players__name">Остап Бендер</p>
+                                <p class="players__rank">Гроссмейстер</p>
+                                <button class="players__btn-details">Подробнее</button>
+                            </div>
                         </div>
-                        <p class="players__name">Хозе-Рауль Капабланка</p>
-                        <p class="players__rank">Чемпион мира по шахматам</p>
-                        <button class="players__btn-details">Подробнее</button>
-                    </div>
-                    <div class="players__item">
-                        <div class="players__photo-frame">
-                            <!-- <img src="" alt="Портрет участника" class="players__image"> -->
-                        </div>
-                        <p class="players__name">Эммануил Ласкер</p>
-                        <p class="players__rank">Чемпион мира по шахматам</p>
-                        <button class="players__btn-details">Подробнее</button>
-                    </div>
-                    <div class="players__item">
-                        <div class="players__photo-frame">
-                            <!-- <img src="" alt="Портрет участника" class="players__image"> -->
-                        </div>
-                        <p class="players__name">Александр Алехин</p>
-                        <p class="players__rank">Чемпион мира по шахматам</p>
-                        <button class="players__btn-details">Подробнее</button>
-                    </div>
-                    <div class="players__item">
-                        <div class="players__photo-frame">
-                            <!-- <img src="" alt="Портрет участника" class="players__image"> -->
-                        </div>
-                        <p class="players__name">Арон Нимцович</p>
-                        <p class="players__rank">Чемпион мира по шахматам</p>
-                        <button class="players__btn-details">Подробнее</button>
-                    </div>
-                    <div class="players__item">
-                        <div class="players__photo-frame">
-                            <!-- <img src="" alt="Портрет участника" class="players__image"> -->
-                        </div>
-                        <p class="players__name">Рихард Рети</p>
-                        <p class="players__rank">Чемпион мира по шахматам</p>
-                        <button class="players__btn-details">Подробнее</button>
-                    </div>
-                    <div class="players__item">
-                        <div class="players__photo-frame">
-                            <!-- <img src="" alt="Портрет участника" class="players__image"> -->
-                        </div>
-                        <p class="players__name">Остап Бендер</p>
-                        <p class="players__rank">Гроссмейстер</p>
-                        <button class="players__btn-details">Подробнее</button>
                     </div>
                 </div>
             </div>
+          
+            
         </section>
        
 
        
     </main>
         
+    <footer class="footer">
+        
+        <div class="container">
+            <p class="footer__text">
+                Все персонажи, события и цитаты являются вымышленными и не принадлежат создателям сайта. С подробностями можно познакомиться в главе XXXIV романа Ильи Ильфа и Евгения Петрова «Двенадцать стульев».
+            </p>
+        </div>
+    
+    </footer>
    
  
    

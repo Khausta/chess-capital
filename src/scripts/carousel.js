@@ -1,5 +1,6 @@
 class Slider {
     constructor(wrapperSelector, itemSelector, options = {}) {
+        this.animateElements = options.animateElements || null;
         this.gap = options.gap || 0;
         this.sliderWrapper = document.querySelector(wrapperSelector);
         this.slideContainer = this.sliderWrapper.parentNode;
@@ -206,6 +207,7 @@ class Slider {
 
         this.currentIndex += direction;
         this.sliderWrapper.style.transition = "transform 0.5s ease";
+        if (this.animateElements) this.animateElements();
         this.updateSliderPosition();
 
         setTimeout(() => {
@@ -229,6 +231,7 @@ class Slider {
         // document.querySelector(this.buttonPrev).removeAttribute('disabled'); 
         this.currentIndex += direction;
         this.sliderWrapper.style.transition = "transform 0.5s ease";
+        if (this.animateElements) this.animateElements();
         this.updateSliderPosition();
         this.updateButtons();
         if (this.pagination) this.updatePagination();
@@ -260,7 +263,7 @@ class Slider {
             dot.addEventListener('click', () => {
                 this.sliderWrapper.style.transition = "transform 0.5s ease";
                 this.currentIndex = index;
-                
+                if (this.animateElements) this.animateElements();
                 this.updateSliderPosition();
                 this.updatePagination();
                 this.updateButtons();
@@ -289,14 +292,26 @@ const sliderOptions = {
     slidesPerView: 1,  //количесвто видимых слайдов
     loop: false,
     pagination: '.stages__pagination',
-    // autoplay: 2000,
+    animateElements: () => {
+        document.querySelector('.stages__img').classList.toggle('animate');
+    }
     // gap: 20
 };
 
-console.log(window.matchMedia("(max-width: 768px)").matches)
 if (window.matchMedia("(max-width: 768px)").matches) {
     
   const slider = new Slider('.stages__wrapper', '.stages__item-wrapper', sliderOptions);
+   const playersSlider = new Slider('.players__wrapper', '.players__item', {
+        startIndex: 0,     // Начальный индекс 
+        countSlides: 1,    // Количество сдвигов за одно движение
+        buttons: {
+            btnPrev: '.playes__btn-prev',
+            btnNext: '.playes__btn-next',
+        },
+        counter: '.playes__counter',
+        slidesPerView: 1,  //количесвто видимых слайдов
+        loop: true,
+        });
 } else {
     const playersSlider = new Slider('.players__wrapper', '.players__item', {
         startIndex: 0,     // Начальный индекс 

@@ -4,6 +4,8 @@
 
 @use './stages';
 @use './players';
+@use './footer';
+@use './main-info';
 
 
 * {
@@ -30,19 +32,48 @@ button {
 }
 
 .title {
-    font-family: "Merriweather-Regular";
+    display: inline;
+    font-family: "Merriweather-Light";
     font-size: 54px;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.title_small {
+    display: inline;
+    font-family: "Merriweather-Light";
+    font-size: 36px;
+    color: variables.$black-color;
+    text-transform: uppercase;
+    line-height: 1.35;
+
+    span {
+        font-family: "Merriweather-Regular";
+         color: variables.$red-color;
+    }
 }
 
  .control {
     display: flex;
-    gap: variables.$size16m;
-    justify-content: center;
+    gap: 14px;
+    justify-content: end;
     align-items: center;
 
 }
 
+
+
+.counter {
+    font-family: "GolosText-Regular";
+    font-size: 16px;
+}
+
+.counter-total-count {
+    opacity: .68;
+}
+
 .button-arrow {
+    border: none;
     width: 44px;
     height: 44px;
     border-radius: 50%;
@@ -53,6 +84,10 @@ button {
         background-color: variables.$btn-disabled-color;
     }
 
+    
+}
+
+.button-arrow.hover {
     &:hover {
         background-color: variables.$yellow-color;
     }
@@ -76,7 +111,14 @@ button {
     }
 }
 
+
+
 @media (max-width: 1366px) {
+
+    .title {
+        font-size: variables.$size54;
+    }
+
     .container {
         padding: 0 variables.$size72;
     }
@@ -86,4 +128,38 @@ button {
     .container {
         padding: 0 variables.$size20m;
     }
+
+    .counter-watched .counter-total-count {
+        font-size: variables.$size16m;
+    }
+
+    .title {
+        font-size: variables.$size36m;
+        line-height: 1.1;
+    }
+
+    .button-arrow {
+        width: clamp(30px, 9.6vw, 73px);
+        height: clamp(30px, 9.6vw, 73px);
+
+        img {
+            height: variables.$size14m;
+        }
+
+      
+    }
+
+    .control {
+        justify-content: center;
+        gap: calc(variables.$index-m * 14vw);
+    }   
+
+    .title_small {
+        font-size: calc(variables.$index-m * 28vw);
+    }
+
+
+
+
+
 }

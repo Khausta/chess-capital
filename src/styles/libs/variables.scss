@@ -3,16 +3,30 @@ $black-color: #313131;
 $gray-color: #D9D9D9;
 $btn-disabled-color: #D6D6D6;
 $yellow-color: #FBCE51;
+$footer-bg: #E9DED4;
+$table-border-color: #D0D0D0;
+$red-color: #F54932;
 
 $size16: clamp(9px, 1.2vw, 16px);
 $size20: clamp(11px, 1.5vw, 20px);
+$size54: clamp(30px, 4vw, 54px);
 $size72: clamp(40px, 5.3vw, 72px);
+$size200: clamp(112px, 14.6vw, 200px);
 
 
 // for 375 (mobile)
 $size34m: clamp(29px, 9.1vw, 70px);
+$size36m: clamp(29px, 9.1vw, 70px);
 $size20m: clamp(17px, 5.3vw, 41px);
 $size62m: clamp(52px, 16.5vw, 126px);
 $size18m: clamp(15px, 4.8vw, 36px);
 $size16m: clamp(13px, 4.3vw, 33px);
+$size14m: clamp(11px, 0.04vw, 28px);
 $size28m: clamp(14px, 7.5vw, 57px);
+$size24m: clamp(20px, 6.4vw, 49px);
+$size12m: clamp(10px, 3.2vw, 25px);
+$size40m: clamp(34px, 10.7vw, 82px);
+$size148m: clamp(126px, 39.5vw, 303px);
+
+$index: 0.07;
+$index-m: 0.27;

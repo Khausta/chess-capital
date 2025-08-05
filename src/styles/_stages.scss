@@ -3,13 +3,36 @@
 
 
 .stages {
+    margin-bottom: 200px;
+
+    &__header {
+        width: 60%;
+        margin-bottom: 54px;
+    }
+
+    
+    &__subtitle {
+        display: inline-block;
+        padding-left: 20px;
+        width: 40%;
+        font-family: "GolosText-Regular";
+        font-size: 20px;
+        color: #3057A2;
+        line-height: 1.2;
+    }
 
     .control {
         display: none;
     }
 
-    &__header {
-        background-color: grey;
+   
+    &__img {
+        position: absolute;
+        top: 60%;
+        right: 10px;
+        transition: transform .3s ease-in-out;
+        
+        
     }
 
     &__wrapper {
@@ -141,6 +164,22 @@
 
 @media (max-width: 1366px) {
     .stages {
+
+        
+
+        margin-bottom: variables.$size200;
+
+        &__img {
+            width: calc(variables.$index * 400vw);
+
+            
+        }
+
+        
+
+        &__subtitle {
+            font-size: variables.$size20; 
+        }
         &__num, &__text {
           font-size: variables.$size20;  
         }
@@ -161,8 +200,37 @@
 @media (max-width: 768px) {
     .stages {
 
+        margin-bottom: variables.$size148m;
+        
+        .animate {
+            transform: translateX(50%) rotate(30deg);
+        }
+
         .container {
             padding: 0;
+        }
+
+        &__header {
+            width: 100%;
+            padding: 0 calc(variables.$index-m * 20vw);
+            margin-bottom: calc(variables.$index-m * 148vw);
+        }
+      
+
+        &__subtitle {
+            margin-top: calc(variables.$index-m * 12vw);;
+            display: block;
+            width: 100%;
+            padding: 0;
+            font-size: calc(variables.$index-m * 18vw);
+        }
+
+        &__img {
+            top: calc(variables.$index-m * 180vw);
+            width: calc(variables.$index-m * 335vw);
+            right: 50%;
+            transform: translateX(50%);
+            z-index: 1;
         }
 
         &__slider {
@@ -244,6 +312,11 @@
             font-size: variables.$size20m;
         }
 
+        .control {
+            display: flex;
+            gap: calc(variables.$index-m * 16vw);
+        }
+
        
     
         &__pagination {
@@ -252,11 +325,11 @@
         }
 
         .dot {
-            width: 10px;
-            height: 10px;
-            
+            width: calc(variables.$index-m * 10vw);
+            height: calc(variables.$index-m * 10vw);
             border-radius: 50%;
             background-color: variables.$gray-color;
+            gap: calc(variables.$index-m * 6vw);;
 
             &.active {
                 background-color: variables.$black-color;

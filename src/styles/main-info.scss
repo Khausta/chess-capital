@@ -1,0 +1,130 @@
+@use './libs/variables.scss';
+@use './libs/fonts.scss';
+
+.main-info {
+    margin-bottom: 187px;
+    &__header {
+        max-width: 764px;
+        padding-top: 27px;
+
+        &_lection {
+            margin-bottom: 70px;
+        }
+
+        &_table {
+            margin-bottom: 60px;
+        }
+    }
+
+    &__header-img {
+        float: right;
+    }
+
+    &__table-block {
+        display: grid;
+        grid-template-columns: 5fr 7fr;
+
+    }
+
+    &__master-photo {
+        position: relative;
+        left: -23px;
+        float: left;
+    }
+
+    .sub-table {
+        font-family: "GolosText-Regular";
+        font-size: 20px;
+        color: #3057A2;
+        line-height: 1.2;
+    }
+}
+
+.info-table {
+
+    margin-bottom: 48px;
+
+    td {
+        // display: inline-block;
+        width: 352px;
+        color: variables.$black-color;
+        
+        font-size: 20px;
+        text-align: left;
+        padding: 16px;
+
+        border-top: 2px solid variables.$table-border-color;
+
+        
+
+        &:nth-child(odd) {
+            font-family: "GolosText-Regular";
+            opacity: .7;
+            border-right: 2px solid variables.$table-border-color;
+        }
+
+         &:nth-child(even) {
+            font-family: "GolosText-SemiBold";
+            
+        }
+
+       
+
+        
+    }
+
+     &__first-row {
+            border-top: none;
+        }
+
+    tr {
+        
+        &:first-child {
+            td {
+                border-top: none;
+
+            }
+        }
+    }
+
+  
+}
+
+@media (max-width: 768px) {
+    .main-info {
+
+        &__table-block {
+            grid-template-columns: 1fr;
+        }
+
+        &__master-photo {
+            width: 100vw;
+            left: 0;
+            float: none;
+        }
+    
+        .title_small {
+            display: block;
+
+            &.mb261 {
+                margin-bottom: calc(variables.$index-m * 261vw);
+            }
+        }
+
+        &__header-img {
+            position: absolute;
+            float: none;
+            height: calc(variables.$index-m * 212vw);
+            max-width: calc(variables.$index-m * 335vw);
+            top: 54vw;
+            }
+        }
+
+        
+
+        .info-table {
+            td {
+                display: inline-block;
+            }
+        }
+}

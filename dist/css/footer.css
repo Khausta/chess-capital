@@ -40,3 +40,22 @@
   font-weight: 700;
   font-style: normal;
 }
+.footer {
+  margin: auto;
+  max-width: 1366px;
+  background-color: #E9DED4;
+}
+.footer__text {
+  padding: 40px 72px;
+  font-family: "GolosText-Regular";
+  font-size: 16px;
+  color: #313131;
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .footer__text {
+    padding: 10.8vw 0 18.9vw 0;
+    font-size: 4.32vw;
+  }
+}

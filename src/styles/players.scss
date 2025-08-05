@@ -1,26 +1,40 @@
 @use './libs/variables.scss';
 @use './libs/fonts.scss';
 
+
 .players {
 
-    &__header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    margin-bottom: 140px;
+
+    &__grid-layout {
+        display: grid;
+        grid-template-columns: 10fr 2fr;
+        row-gap: 60px;
+        column-gap: 20px;
+        
+        grid-template-areas: 
+        "header control"
+        "slider slider";
     }
 
-    &__counter {
-        font-family: "GolosText-Regular";
-        font-size: 16px;
-        color: variables.$black-color;
+
+
+    &__header {
         
-        .counter-total-count {
-            color: opacity(68%);
-        }
+        grid-area: header;
     }
+
+    &__control {
+        grid-area: control;
+    }
+    
+
+    
     &__slider {
         margin: auto;
         width: 1222px;
+        overflow: hidden;
+        grid-area: slider;
     }
 
     &__wrapper {
@@ -61,6 +75,7 @@
         margin-bottom: 20px;
         font-family: "GolosText-Regular";
         font-size: 20px;
+        color: variables.$gray-color;
     }
 
     &__btn-details {
@@ -79,4 +94,72 @@
         }
 
     }
+}
+
+@media (max-width: 1366px) {
+    .players {
+
+        margin-bottom: calc(variables.$index * 140vw);
+
+        &__grid-layout {
+            row-gap: calc(variables.$index * 60vw);
+        }
+
+        &__slider {
+            width: clamp(697px, 90vw, 1222px);
+        }
+
+        &__item {
+            width: clamp(230px, 30vw, 407px);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .players {
+
+        margin-bottom: calc(variables.$index-m * 100vw);
+
+        &__grid-layout {
+            // display: grid;
+            grid-template-columns: 1fr;
+            gap: variables.$size40m;
+            grid-template-areas: 
+            "header"
+            "slider"
+            "control";
+        }
+        
+        &__slider {
+            width: 100%;
+           
+        }
+
+        &__item {
+             max-width: 100vw;
+             width: 100%;
+        }
+
+        &__photo-frame {
+            width: clamp(208px, 65vw, 499px );
+            height: clamp(208px, 65vw, 499px );
+        }
+
+        &__name {
+            font-size: variables.$size24m;
+        }
+        
+        &__rank {
+            font-size: variables.$size20m;
+        }
+
+        &__btn-details {
+           font-size: variables.$size16m; 
+           border-radius: variables.$size62m;
+           padding: variables.$size12m;
+        }
+
+        
+    }
+    
 }

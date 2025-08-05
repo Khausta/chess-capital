@@ -1,0 +1,27 @@
+@use './libs/variables.scss';
+@use './libs/fonts.scss';
+
+.footer {
+    margin: auto;
+    max-width: 1366px;
+    background-color: variables.$footer-bg;
+    
+
+    &__text {
+        padding: 40px 72px;
+        font-family: "GolosText-Regular";
+        font-size: 16px;
+        color: variables.$black-color;
+        opacity: .6;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        &__text {
+            padding: calc(variables.$index-m * 40vw) 0 calc(variables.$index-m * 70vw) 0;
+            font-size: calc(variables.$index-m * 16vw);
+           
+        }
+    }
+}
