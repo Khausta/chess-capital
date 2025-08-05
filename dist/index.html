@@ -16,7 +16,30 @@
 
     <!-- main content -->
     <main>
-        <section class="main-info">
+        <section class="hero">
+             <picture>
+                <source media="(max-width: 768px)" srcset="./img/hero/hero-bg-mob.png">
+                <img class="hero__bg" src="./img/hero/hero-bg.png" alt="Город и шахматы">
+            </picture>
+            <div class="container">
+                <a class="logo" href="#">
+                    <img src="./img/logo.svg" alt="Логотип">
+                </a>
+                <div class="hero__content">
+                    <h1 class="hero__title">Превратите уездный город <span class="hero__title_ml">в&nbsp;столицу</span> <span class="hero__title_center">земного шара</span></h1>
+                    <p class="hero__subtitle">
+                        Оплатите взнос на телеграммы для организации Международного васюкинского турнира по шахматам
+                    </p>
+                    <div class="hero__buttons">
+                        <a class="hero__btn hero__btn-black hover" href="#main-info">Поддержать шахматную мысль</a>
+                        <a class="hero__btn hero__btn-transparent hover" href="#players">Подробнее о&nbsp;турнире</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="main-info" id="main-info">
             <div class="container">
     <picture>
         <source media="(max-width: 768px)" srcset="./img/main-info/game-photo-mob.png">
@@ -73,7 +96,7 @@
                         </tr>
                         <tr>
                             <td>Взнос на телеграммы:</td>
-                            <td>100 руб. 21 руб. 16 коп.</td>
+                            <td><span class="red-line">100 руб.</span> 21 руб. 16 коп.</td>
                         </tr>
                     </table>
 
@@ -161,7 +184,7 @@
         
         </section>
 
-        <section class="players">
+        <section class="players" id="players">
             <div class="container">
                 <div class="players__grid-layout">
                     <header class="players__header">
