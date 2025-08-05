@@ -1,42 +1,42 @@
 @font-face {
   font-family: "GolosText-Medium";
-  src: url("./../../fonts/Golos-Text/GolosText-Medium.ttf");
+  src: url("./fonts/Golos-Text/GolosText-Medium.ttf");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "GolosText-Regular";
-  src: url("./../../fonts/Golos-Text/GolosText-Regular.ttf");
+  src: url("./fonts/Golos-Text/GolosText-Regular.ttf");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "GolosText-Bold";
-  src: url("./../../fonts/Golos-Text/GolosText-Bold.ttf");
+  src: url("./fonts/Golos-Text/GolosText-Bold.ttf");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "GolosText-SemiBold";
-  src: url("./../../fonts/Golos-Text/GolosText-SemiBold.ttf");
+  src: url("./fonts/Golos-Text/GolosText-SemiBold.ttf");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "Merriweather-Light";
-  src: url("./../../fonts/Merriweather/Merriweather-Light.ttf");
+  src: url("./fonts/Merriweather/Merriweather-Light.ttf");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: "Merriweather-Regular";
-  src: url("./../../fonts/Merriweather/Merriweather-Regular.ttf");
+  src: url("./fonts/Merriweather/Merriweather-Regular.ttf");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Merriweather-Bold";
-  src: url("./../../fonts/Merriweather/Merriweather-Bold.ttf");
+  src: url("./fonts/Merriweather/Merriweather-Bold.ttf");
   font-weight: 700;
   font-style: normal;
 }
