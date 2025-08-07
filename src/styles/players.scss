@@ -88,9 +88,11 @@
         border: 1px solid #3057A2;
         transition: all .2s ease;
 
-        &:hover {
-            color: variables.$white-color;
-            background-color: #3057A2;;
+        &.hover {
+            &:hover {
+                color: variables.$white-color;
+                background-color: #3057A2;;
+            }
         }
 
     }

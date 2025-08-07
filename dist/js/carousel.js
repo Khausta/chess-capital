@@ -13,7 +13,6 @@ var Slider = /*#__PURE__*/function () {
     var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
     _classCallCheck(this, Slider);
     _defineProperty(this, "touchStartHandler", function (event) {
-      console.log('touch');
       _this.startX = event.touches[0].clientX; // Сохраняем начальное значение X
       _this.startY = event.touches[0].clientY; // Сохраняем начальное значение Y
     });
@@ -141,20 +140,51 @@ var Slider = /*#__PURE__*/function () {
       if (this.isPlaying) return; // Если уже в режиме автопроигрывания, выходим
       this.isPlaying = true; // Устанавливаем статус автопроигрывания в true
 
+      // Выбор элемента, который будем отслеживать
+      var target = this.sliderWrapper.parentElement;
+
+      // Опции для Intersection Observer
+      var options = {
+        root: null,
+        // viewport
+        rootMargin: '0px',
+        threshold: 0.1 // Когда 10% элемента становится видимым
+      };
+
+      // Создание экземпляра Intersection Observer
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            _this3.startPlay();
+            // Если не нужно вызывать функцию повторно, можно отключить наблюдатель
+            observer.unobserve(target);
+          }
+        });
+      }, options);
+
+      // Начинаем наблюдение за целевым элементом
+      observer.observe(target);
+    }
+
+    // Функция, которую мы хотим вызвать
+  }, {
+    key: "startPlay",
+    value: function startPlay() {
+      var _this4 = this;
       if (this.loop) {
         this.timer = setInterval(function () {
-          _this3.loopSlide(_this3.countSlidesPerSwipe);
+          _this4.loopSlide(_this4.countSlidesPerSwipe);
         }, this.interval);
       } else {
         this.timer = setInterval(function () {
-          if (_this3.currentIndex < _this3.slides.length - _this3.countSlidesPerSwipe) {
-            _this3.limitSlide(_this3.countSlidesPerSwipe);
+          if (_this4.currentIndex < _this4.slides.length - _this4.countSlidesPerSwipe) {
+            _this4.limitSlide(_this4.countSlidesPerSwipe);
           } else {
-            clearInterval(_this3.timer); // Остановить таймер
-            _this3.isPlaying = false; // Останавливаем автопроигрывание
-            _this3.currentIndex = 0;
-            _this3.limitSlide(0);
-            _this3.autoPlaySlides();
+            clearInterval(_this4.timer); // Остановить таймер
+            _this4.isPlaying = false; // Останавливаем автопроигрывание
+            _this4.currentIndex = 0;
+            _this4.limitSlide(0);
+            _this4.autoPlaySlides();
           }
         }, this.interval);
       }
@@ -196,7 +226,7 @@ var Slider = /*#__PURE__*/function () {
   }, {
     key: "loopSlide",
     value: function loopSlide(direction) {
-      var _this4 = this;
+      var _this5 = this;
       if (this.isAnimating) return;
       this.isAnimating = true;
       this.currentIndex += direction;
@@ -204,22 +234,21 @@ var Slider = /*#__PURE__*/function () {
       if (this.animateElements) this.animateElements();
       this.updateSliderPosition();
       setTimeout(function () {
-        if (_this4.currentIndex >= _this4.slides.length + _this4.countSlidesPerSwipe) {
-          _this4.currentIndex = _this4.countSlidesPerSwipe;
-          _this4.resetSliderPosition();
-        } else if (_this4.currentIndex === 0) {
-          _this4.currentIndex = _this4.slides.length;
-          _this4.resetSliderPosition();
+        if (_this5.currentIndex >= _this5.slides.length + _this5.countSlidesPerSwipe) {
+          _this5.currentIndex = _this5.countSlidesPerSwipe;
+          _this5.resetSliderPosition();
+        } else if (_this5.currentIndex === 0) {
+          _this5.currentIndex = _this5.slides.length;
+          _this5.resetSliderPosition();
         }
-        _this4.isAnimating = false;
-        if (_this4.pagination) _this4.updatePagination();
-        if (_this4.counter) _this4.updateCounter();
+        _this5.isAnimating = false;
+        if (_this5.pagination) _this5.updatePagination();
+        if (_this5.counter) _this5.updateCounter();
       }, 500);
     }
   }, {
     key: "limitSlide",
     value: function limitSlide(direction) {
-      // document.querySelector(this.buttonPrev).removeAttribute('disabled'); 
       this.currentIndex += direction;
       this.sliderWrapper.style.transition = "transform 0.5s ease";
       if (this.animateElements) this.animateElements();
@@ -249,19 +278,19 @@ var Slider = /*#__PURE__*/function () {
   }, {
     key: "createPagination",
     value: function createPagination() {
-      var _this5 = this;
+      var _this6 = this;
       var paginationContainer = document.querySelector(this.pagination);
       this.slides.forEach(function (_, index) {
         var dot = document.createElement('div');
         dot.classList.add('dot');
         dot.dataset.index = index;
         dot.addEventListener('click', function () {
-          _this5.sliderWrapper.style.transition = "transform 0.5s ease";
-          _this5.currentIndex = index;
-          if (_this5.animateElements) _this5.animateElements();
-          _this5.updateSliderPosition();
-          _this5.updatePagination();
-          _this5.updateButtons();
+          _this6.sliderWrapper.style.transition = "transform 0.5s ease";
+          _this6.currentIndex = index;
+          if (_this6.animateElements) _this6.animateElements();
+          _this6.updateSliderPosition();
+          _this6.updatePagination();
+          _this6.updateButtons();
         });
         paginationContainer.appendChild(dot);
       });
@@ -294,7 +323,6 @@ var sliderOptions = {
   animateElements: function animateElements() {
     document.querySelector('.stages__img').classList.toggle('animate');
   }
-  // gap: 20
 };
 if (window.matchMedia("(max-width: 768px)").matches) {
   var slider = new Slider('.stages__wrapper', '.stages__item-wrapper', sliderOptions);

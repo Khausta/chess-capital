@@ -309,7 +309,9 @@
         }
 
         &__num {
-            font-size: variables.$size20m;
+            width: calc(variables.$index-m * 36vw);
+            height: calc(variables.$index-m * 36vw);
+            font-size: calc(variables.$index-m * 20vw);
         }
 
         .control {
@@ -321,7 +323,7 @@
     
         &__pagination {
             display: flex;
-            gap: 6px;
+            gap: calc(variables.$index-m * 6vw);
         }
 
         .dot {

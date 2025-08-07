@@ -178,12 +178,14 @@
     text-align: right;
   }
   .hero__subtitle {
+    width: 100%;
     margin-bottom: 8.64vw;
     font-size: 4.86vw;
+    text-align: left;
   }
   .hero__buttons {
     flex-direction: column;
-    grid-area: 3.78vw;
+    gap: 3.78vw;
   }
   .hero__btn {
     width: 100%;

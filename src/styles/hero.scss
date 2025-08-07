@@ -179,12 +179,14 @@
             text-align: right;
         }
         &__subtitle {
+            width: 100%;
             margin-bottom: calc(variables.$index-m * 32vw);
             font-size: calc(variables.$index-m * 18vw);
+            text-align: left;
         }
         &__buttons {
             flex-direction: column;
-            grid-area: calc(variables.$index-m * 14vw);
+            gap: calc(variables.$index-m * 14vw);
         }
         &__btn {
             width: 100%;

@@ -106,7 +106,7 @@
   border: 1px solid #3057A2;
   transition: all 0.2s ease;
 }
-.players__btn-details:hover {
+.players__btn-details.hover:hover {
   color: #ffffff;
   background-color: #3057A2;
 }

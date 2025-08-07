@@ -38,21 +38,18 @@ class Slider {
         this.updateSliderPosition();
         const isEnaughSLides = this.slides.length % this.countSlidesPerSwipe;
         
-            if (isEnaughSLides) {
-                 const difference = this.countSlidesPerSwipe - isEnaughSLides;
-                for (let i = 1; i <= difference; i++) {
-                    const emptySlide = this.slides[0].cloneNode(false);
-                    this.sliderWrapper.appendChild(emptySlide);
-                }
-                this.slides = document.querySelectorAll(this.itemSelector);
-
-                
-                
+        if (isEnaughSLides) {
+                const difference = this.countSlidesPerSwipe - isEnaughSLides;
+            for (let i = 1; i <= difference; i++) {
+                const emptySlide = this.slides[0].cloneNode(false);
+                this.sliderWrapper.appendChild(emptySlide);
             }
+            this.slides = document.querySelectorAll(this.itemSelector);
+        }
             
-            if (this.loop) {
-                    this.cloneSlides();
-                }
+        if (this.loop) {
+                this.cloneSlides();
+            }
         
 
 
@@ -80,8 +77,8 @@ class Slider {
 
         //проверка, поддерживается ли устройством собития касания
         const isTouchDevice = 'ontouchstart' in window || 
-                      navigator.maxTouchPoints > 0 || 
-                      navigator.msMaxTouchPoints > 0;
+            navigator.maxTouchPoints > 0 || 
+            navigator.msMaxTouchPoints > 0;
 
         if (isTouchDevice) { 
             // Обработка свайпов
@@ -94,19 +91,19 @@ class Slider {
             this.createCounter();
             this.updateCounter();
         }
+
         if (this.pagination) {
             this.createPagination();
             this.updatePagination();
         }
 
         if (this.interval) {
-            this.autoPlaySlides();
+           this.autoPlaySlides();
         }
     }
 
 
     touchStartHandler = (event) => {
-        console.log('touch')
         this.startX = event.touches[0].clientX; // Сохраняем начальное значение X
         this.startY = event.touches[0].clientY; // Сохраняем начальное значение Y
     };
@@ -146,27 +143,51 @@ class Slider {
     autoPlaySlides() {
         if (this.isPlaying) return; // Если уже в режиме автопроигрывания, выходим
         this.isPlaying = true; // Устанавливаем статус автопроигрывания в true
-        
+                
+        // Выбор элемента, который будем отслеживать
+        const target = this.sliderWrapper.parentElement;
+
+        // Опции для Intersection Observer
+        const options = {
+            root: null, // viewport
+            rootMargin: '0px',
+            threshold: 0.1 // Когда 10% элемента становится видимым
+        };
+
+        // Создание экземпляра Intersection Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    this.startPlay();
+                    // Если не нужно вызывать функцию повторно, можно отключить наблюдатель
+                    observer.unobserve(target);
+                }
+            });
+        }, options);
+
+        // Начинаем наблюдение за целевым элементом
+        observer.observe(target);
+    }
+
+     // Функция, которую мы хотим вызвать
+    startPlay() {
         if (this.loop) {
             this.timer = setInterval(() => {
-            
                 this.loopSlide(this.countSlidesPerSwipe);
-           
         }, this.interval);
         } else {
             this.timer = setInterval(() => {
-            if (this.currentIndex < this.slides.length - this.countSlidesPerSwipe) {
-                this.limitSlide(this.countSlidesPerSwipe);
-            } else {
-                clearInterval(this.timer); // Остановить таймер
-                this.isPlaying = false; // Останавливаем автопроигрывание
-                this.currentIndex = 0;
-                this.limitSlide(0);
-                this.autoPlaySlides();
-            }
-        }, this.interval);
+                if (this.currentIndex < this.slides.length - this.countSlidesPerSwipe) {
+                    this.limitSlide(this.countSlidesPerSwipe);
+                } else {
+                    clearInterval(this.timer); // Остановить таймер
+                    this.isPlaying = false; // Останавливаем автопроигрывание
+                    this.currentIndex = 0;
+                    this.limitSlide(0);
+                    this.autoPlaySlides();
+                }
+            }, this.interval);
         }
-        
     }
 
 
@@ -222,13 +243,9 @@ class Slider {
             if (this.pagination) this.updatePagination();
             if (this.counter) this.updateCounter();
         }, 500);
-
-        
     }
 
     limitSlide(direction) {
-       
-        // document.querySelector(this.buttonPrev).removeAttribute('disabled'); 
         this.currentIndex += direction;
         this.sliderWrapper.style.transition = "transform 0.5s ease";
         if (this.animateElements) this.animateElements();
@@ -295,13 +312,13 @@ const sliderOptions = {
     animateElements: () => {
         document.querySelector('.stages__img').classList.toggle('animate');
     }
-    // gap: 20
 };
 
 if (window.matchMedia("(max-width: 768px)").matches) {
     
   const slider = new Slider('.stages__wrapper', '.stages__item-wrapper', sliderOptions);
-   const playersSlider = new Slider('.players__wrapper', '.players__item', {
+ 
+  const playersSlider = new Slider('.players__wrapper', '.players__item', {
         startIndex: 0,     // Начальный индекс 
         countSlides: 1,    // Количество сдвигов за одно движение
         buttons: {
@@ -327,3 +344,6 @@ if (window.matchMedia("(max-width: 768px)").matches) {
         autoplay: 4000,
         });
 }
+
+
+

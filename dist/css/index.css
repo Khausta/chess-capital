@@ -269,7 +269,9 @@
     font-size: clamp(15px, 4.8vw, 36px);
   }
   .stages__num {
-    font-size: clamp(17px, 5.3vw, 41px);
+    width: 9.72vw;
+    height: 9.72vw;
+    font-size: 5.4vw;
   }
   .stages .control {
     display: flex;
@@ -277,7 +279,7 @@
   }
   .stages__pagination {
     display: flex;
-    gap: 6px;
+    gap: 1.62vw;
   }
   .stages .dot {
     width: 2.7vw;
@@ -356,7 +358,7 @@
   border: 1px solid #3057A2;
   transition: all 0.2s ease;
 }
-.players__btn-details:hover {
+.players__btn-details.hover:hover {
   color: #ffffff;
   background-color: #3057A2;
 }
@@ -706,12 +708,14 @@
     text-align: right;
   }
   .hero__subtitle {
+    width: 100%;
     margin-bottom: 8.64vw;
     font-size: 4.86vw;
+    text-align: left;
   }
   .hero__buttons {
     flex-direction: column;
-    grid-area: 3.78vw;
+    gap: 3.78vw;
   }
   .hero__btn {
     width: 100%;
@@ -780,7 +784,6 @@ button {
 
 .marquee__content span {
   white-space: nowrap;
-  font-size: 1.2rem;
   margin-right: 2rem;
 }
 
@@ -924,8 +927,8 @@ button {
   .container {
     padding: 0 clamp(17px, 5.3vw, 41px);
   }
-  .counter-watched .counter-total-count {
-    font-size: clamp(13px, 4.3vw, 33px);
+  .counter {
+    font-size: 4.32vw;
   }
   .title {
     font-size: clamp(29px, 9.1vw, 70px);
@@ -936,7 +939,7 @@ button {
     height: clamp(30px, 9.6vw, 73px);
   }
   .button-arrow img {
-    height: clamp(11px, 0.04vw, 28px);
+    height: 3.78vw;
   }
   .control {
     justify-content: center;
@@ -950,5 +953,8 @@ button {
   }
   .marquee__content {
     font-size: 4.32vw;
+  }
+  .red-line::before {
+    height: 0.54vw;
   }
 }

@@ -64,7 +64,7 @@ button {
 
 .marquee__content span {
   white-space: nowrap;
-  font-size: 1.2rem;
+//   font-size: 1.2rem;
   margin-right: 2rem;
 }
 
@@ -228,8 +228,8 @@ button {
         padding: 0 variables.$size20m;
     }
 
-    .counter-watched .counter-total-count {
-        font-size: variables.$size16m;
+    .counter {
+         font-size: calc(variables.$index-m * 16vw);
     }
 
     .title {
@@ -242,7 +242,7 @@ button {
         height: clamp(30px, 9.6vw, 73px);
 
         img {
-            height: variables.$size14m;
+            height: calc(variables.$index-m * 14vw);
         }
 
       
@@ -260,9 +260,14 @@ button {
     .marquee {
         padding: calc(variables.$index-m * 10vw) 0;
     }
-.marquee__content {
-    font-size: calc(variables.$index-m * 16vw);
-}
+
+    .marquee__content {
+        font-size: calc(variables.$index-m * 16vw);
+    }
+
+    .red-line::before {
+        height: calc(variables.$index-m * 2vw);
+    }
 
 
 
