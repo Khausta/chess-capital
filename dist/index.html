@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/index.css">
     <script type="module" src="./js/main.js" defer="defer"></script>
     <script type="module" src="./js/carousel.js" defer="defer"></script>
+    <script type="module" src="./js/marquee.js" defer="defer"></script>
 </head>
 <body>
     <header class="header">
@@ -17,7 +18,7 @@
     <!-- main content -->
     <main>
         <section class="hero">
-             <picture>
+            <picture>
                 <source media="(max-width: 768px)" srcset="./img/hero/hero-bg-mob.webp">
                 <img class="hero__bg" src="./img/hero/hero-bg.webp" alt="Город и шахматы">
             </picture>
@@ -37,20 +38,16 @@
 
                 </div>
             </div>
-           <div class="marquee">
-                <div class="marquee__track">
-                    <div class="marquee__content">
-                    <span>Дело помощи утопающим — дело рук самих утопающих! &nbsp;</span>
-                    <span>Дело помощи утопающим — дело рук самих утопающих! &nbsp;</span>
-                    <span>Дело помощи утопающим — дело рук самих утопающих! &nbsp;</span>
-                    <span>Дело помощи утопающим — дело рук самих утопающих! &nbsp;</span>
-                    <!-- <span>Бегущая строка JS &nbsp;</span>
-                    <span>Бегущая строка JS &nbsp;</span> -->
+            
+            <div class="marquee-wrap">
+                <div class="marquee-items-wrap">
+                    <div class="marquee-items">
+                    <div class="marquee-item">Дело помощи утопающим — дело рук самих утопающих! 
                     </div>
-                    
+                    </div>
                 </div>
-                </div>
-    
+            </div>
+           
             
         </section>
 
@@ -275,26 +272,21 @@
         </section>
        
 
-       <div class="infinite-line">
-        <div class="marquee">
-                <div class="marquee__track">
-                    <div class="marquee__content">
-                    <span>Дело помощи утопающим — дело рук самих утопающих! &nbsp;</span>
-                    <span>Дело помощи утопающим — дело рук самих утопающих! &nbsp;</span>
-                    <span>Дело помощи утопающим — дело рук самих утопающих! &nbsp;</span>
-                    <span>Дело помощи утопающим — дело рук самих утопающих! &nbsp;</span>
-                    <!-- <span>Бегущая строка JS &nbsp;</span>
-                    <span>Бегущая строка JS &nbsp;</span> -->
-                    </div>
-                    
-                </div>
-                </div>
-    </div>
+       
        
     </main>
+
+    
         
     <footer class="footer">
-        
+        <div class="marquee-wrap-footer">
+        <div class="marquee-items-wrap">
+            <div class="marquee-items">
+            <div class="marquee-item">Дело помощи утопающим — дело рук самих утопающих! 
+            </div>
+            </div>
+        </div>
+    </div>
         <div class="container">
             <p class="footer__text">
                 Все персонажи, события и цитаты являются вымышленными и не принадлежат создателям сайта. С подробностями можно познакомиться в главе XXXIV романа Ильи Ильфа и Евгения Петрова «Двенадцать стульев».

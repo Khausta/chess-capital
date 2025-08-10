@@ -1,0 +1,92 @@
+@use './libs/variables.scss';
+@use './libs/fonts.scss';
+
+.marquee-wrap {
+  max-width: 1366px;
+  margin: auto;
+ 
+}
+.marquee-items-wrap {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  font-family: serif;
+  background-color: variables.$red-color;
+  padding: 18px 0;
+  font-family: "Merriweather-Light";
+  font-size: 16px;
+  color: variables.$white-color;
+  text-transform: uppercase;
+}
+
+.marquee-items {
+  flex-shrink: 0;
+  display: flex;
+  min-width: 100%;
+}
+.marquee-item {
+  padding-left: 12px;
+  flex: 0 0 auto;
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.1s ease-in-out;
+}
+
+.marquee-item::after {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+
+.marquee {
+  animation: scroll 20s linear infinite;
+}
+.reverce {
+  animation-direction: reverse;
+}
+
+.marquee-pause-hover-effect:hover .marquee {
+  animation-play-state: paused;
+}
+
+
+
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100%));
+  }
+}
+
+@media (max-width: 768px) {
+    .marquee-items-wrap {
+        padding: calc(variables.$index-m * 10vw) 0;
+        font-size: calc(variables.$index-m * 16vw);
+    }
+
+    .marquee-item {
+        padding-left: calc(variables.$index-m * 12vw);
+        gap: calc(variables.$index-m * 12vw);
+    }
+
+    .marquee-item::after {
+        width: calc(variables.$index-m * 6vw);
+        height: calc(variables.$index-m * 6vw);
+ 
+    }
+
+    .marquee {
+        animation: scroll 10s linear infinite;
+    }
+}

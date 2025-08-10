@@ -6,6 +6,7 @@
 @use './footer';
 @use './main-info';
 @use './hero';
+@use './marquee';
 
 html {
     scroll-behavior: smooth;
@@ -31,47 +32,7 @@ button {
     cursor: pointer;
 }
 
-.infinite-line {
-    position: relative;
-}
 
-.marquee {
-    position: absolute;
-    bottom: 0;
-  overflow: hidden;
-  background-color: variables.$red-color;
-  padding: 10px 0;
-  width: 100%;
-}
-
-.marquee__track {
-    bottom: 0;
-  display: flex;
-  width: fit-content;
-  
-  animation: scroll-left 15s linear infinite;
-}
-
-.marquee__content {
-  display: flex;
-  font-family: "Merriweather-Light";
-  font-size: 16px;
-  
-  color: variables.$white-color;
-  text-transform: uppercase;
-  
-}
-
-.marquee__content span {
-  white-space: nowrap;
-//   font-size: 1.2rem;
-  margin-right: 2rem;
-}
-
-@keyframes scroll-left {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
-}
 
 .logo {
     display: block;
@@ -210,12 +171,7 @@ button {
         padding: 0 variables.$size72;
     }
 
-    .marquee {
-    padding: calc(variables.$index * 10vw) 0;
-    }
-    .marquee__content {
-        font-size: calc(variables.$index * 16vw);
-    }
+    
 }
 
 @media (max-width: 768px) {
@@ -244,8 +200,6 @@ button {
         img {
             height: calc(variables.$index-m * 14vw);
         }
-
-      
     }
 
     .control {
@@ -255,14 +209,6 @@ button {
 
     .title_small {
         font-size: calc(variables.$index-m * 28vw);
-    }
-
-    .marquee {
-        padding: calc(variables.$index-m * 10vw) 0;
-    }
-
-    .marquee__content {
-        font-size: calc(variables.$index-m * 16vw);
     }
 
     .red-line::before {
