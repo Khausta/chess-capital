@@ -331,6 +331,11 @@ if (window.matchMedia("(max-width: 768px)").matches) {
         autoplay: 4000,
         });
 } else {
+    // const buttonArrow = document.querySelectorAll('.button-arrow');
+    // buttonArrow.forEach(el => {
+    //     el.classList.add('hover');
+    // })
+
     const playersSlider = new Slider('.players__wrapper', '.players__item', {
         startIndex: 0,     // Начальный индекс 
         countSlides: 3,    // Количество сдвигов за одно движение
